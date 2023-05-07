@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://2anke4coxb1u"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_c6okl"]
+[ext_resource type="Texture2D" uid="uid://uh8ji6puvvd4" path="res://Assets/NotMine/Spritesheet/roguelikeChar_transparent.png" id="1_n0lpn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3yo8"]
+atlas = ExtResource("1_n0lpn")
+region = Rect2(0, 0, 918, 203)
+margin = Rect2(0, 0, 1, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y8th1"]
+radius = 0.375184
+height = 1.25309
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+wall_min_slide_angle = 0.785398
+script = ExtResource("1_c6okl")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+billboard = 2
+texture_filter = 4
+texture = SubResource("AtlasTexture_m3yo8")
+hframes = 54
+vframes = 12
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133439, 0.285045, 0.0233519)
+shape = SubResource("CapsuleShape3D_y8th1")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 10, 14.142, 10)
+projection = 1
+size = 10.0
