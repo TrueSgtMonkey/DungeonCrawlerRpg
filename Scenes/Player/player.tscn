@@ -16,9 +16,29 @@ height = 1.25309
 wall_min_slide_angle = 0.785398
 script = ExtResource("1_c6okl")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="PlayerSpriteContainer" type="Node3D" parent="."]
+
+[node name="PlayerSprite" type="Sprite3D" parent="PlayerSpriteContainer"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 billboard = 2
+shaded = true
+alpha_scissor_threshold = 0.043
+alpha_hash_scale = 0.87
+alpha_antialiasing_mode = 2
+texture_filter = 4
+render_priority = 1
+texture = SubResource("AtlasTexture_m3yo8")
+hframes = 54
+vframes = 12
+
+[node name="PlayerSpriteBlocked" type="Sprite3D" parent="PlayerSpriteContainer"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+modulate = Color(0.0470588, 1, 1, 0.784314)
+billboard = 2
+no_depth_test = true
+alpha_scissor_threshold = 0.043
+alpha_hash_scale = 0.87
+alpha_antialiasing_mode = 2
 texture_filter = 4
 texture = SubResource("AtlasTexture_m3yo8")
 hframes = 54
@@ -32,7 +52,7 @@ shape = SubResource("CapsuleShape3D_y8th1")
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 10, 14.142, 10)
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 15, 21.213, 15)
 projection = 1
 current = true
 size = 10.0
