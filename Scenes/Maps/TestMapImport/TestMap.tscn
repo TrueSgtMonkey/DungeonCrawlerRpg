@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c82j7r6sb03jl"]
+
+[ext_resource type="PackedScene" uid="uid://bersslokwik5a" path="res://Scenes/Maps/TestMapImport/test_map.tscn" id="1_0ido6"]
+[ext_resource type="PackedScene" uid="uid://2anke4coxb1u" path="res://Scenes/Player/player.tscn" id="2_5t223"]
+
+[node name="TestMap" type="Node3D"]
+
+[node name="test_map" parent="." instance=ExtResource("1_0ido6")]
+
+[node name="Player" parent="." instance=ExtResource("2_5t223")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95041, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.743868, 0.385702, -0.545796, 0, 0.816662, 0.577117, 0.668326, -0.429299, 0.607489, 0, 7.8822, 0)
+light_color = Color(0.984314, 0.592157, 0.423529, 1)
+light_energy = 4.2
+shadow_enabled = true
